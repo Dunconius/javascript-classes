@@ -5,6 +5,10 @@ import React from "react";
 export default class PokemonTeam extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            pokemonTeam: []
+        }
     }
     
     // Make requests to PokeAPI
@@ -22,6 +26,8 @@ export default class PokemonTeam extends React.Component {
         let data = await response.json();
         console.log(data.name);
 
+        this.setState({pokemonTeam: [...this.state.pokemonTeam, data]});
+
     }
 
     // Store data from each request
@@ -33,6 +39,10 @@ export default class PokemonTeam extends React.Component {
         return(
             <div>
                 <h1>Pokemon data here</h1>
+
+                {this.state.pokemonTeam && this.state.pokemonTeam.map((pokemon, index) => {
+                    return <h1 key={index}>{pokemon.name}</h1>
+                })}
             </div>
         )
     }
