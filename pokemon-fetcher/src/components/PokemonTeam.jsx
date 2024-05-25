@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import PokemonCard from "./PokemonCard";
 
 export default class PokemonTeam extends React.Component {
     constructor(props){
@@ -41,7 +42,8 @@ export default class PokemonTeam extends React.Component {
                 <h1>Pokemon data here</h1>
 
                 {this.state.pokemonTeam && this.state.pokemonTeam.map((pokemon, index) => {
-                    return <h1 key={index}>{pokemon.name}</h1>
+                    // return <h1 key={crypto.randomUUID()}>{pokemon.name}</h1>
+                    return <PokemonCard key={crypto.randomUUID()} name={pokemon.name} sprite={pokemon.sprites.front_default}/>
                 })}
             </div>
         )
