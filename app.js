@@ -10,6 +10,7 @@ const { Library } = require("./library");
 // create instances of classes
 
 let lotr = new Book("fellowship of the ring");
+let lotr2 = new Book("the two towers");
 
 console.log(lotr);
 console.log(lotr.name);
@@ -20,7 +21,6 @@ console.log(lotr.edition);
 // create an instance of  library
 // add media instances into the library instance
 
-
 let libraryInstance = new Library;
 libraryInstance.books.push(lotr);
 
@@ -29,3 +29,14 @@ libraryInstance.books.push(lotr);
 console.log(libraryInstance);
 
 console.log(libraryInstance.books[0].name);
+
+console.log("library length " +libraryInstance.books.length);
+console.log("book count " + Book.count);
+
+console.log("books about to be removed...");
+lotr = null;
+Book.removeBook();
+
+console.log("book count " + Book.count);
+
+console.log(libraryInstance.books[0].getBookName());
