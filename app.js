@@ -19,6 +19,9 @@ console.log(lotr.edition);
 // Do things with instances
 
 // create an instance of  library
+// Class = blueprint
+// Instance = thing we make based on the blueprint
+// Verb is 'instantiate'
 // add media instances into the library instance
 
 let libraryInstance = new Library;
