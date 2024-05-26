@@ -8,7 +8,7 @@ export default class PokemonCard extends React.Component {
     render(){
         return <div>
             <h1>{this.props.name}</h1>
-            <img src={this.props.sprite} alt="Pokemon Sprite Image" />
+            <img src={this.props.sprite} alt="Pokemon Sprite" />
         </div>
     }
 
