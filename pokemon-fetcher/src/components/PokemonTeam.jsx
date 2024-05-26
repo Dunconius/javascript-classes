@@ -21,14 +21,19 @@ export default class PokemonTeam extends React.Component {
             return Math.floor(Math.random() * 1025) + 1;
         }
 
-        let randomNumber = getRandomPokemonID();
+        for (let index = 0; index < 6; index++){
+            let randomNumber = getRandomPokemonID();
 
-        let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + randomNumber).catch(error => error);
-        let data = await response.json();
-        console.log(data.name);
+            let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + randomNumber).catch(error => error);
+            let data = await response.json();
 
-        this.setState({pokemonTeam: [...this.state.pokemonTeam, data]});
+            this.setState({pokemonTeam: [...this.state.pokemonTeam, data]});
 
+        }
+    }
+
+    componentDidUpdate(){
+        console.log("This component has updated and re-rendered!");
     }
 
     // Store data from each request
